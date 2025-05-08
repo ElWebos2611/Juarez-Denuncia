@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juárez Denuncia</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    emailjs.init({
+      publicKey: "z3R_uvH42GmaJzH94",
+      blockHeadless: true
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>📢 Juárez Denuncia</h1>
+    <button id="contacto">Contacto seguro</button>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Denuncia Anónima</h2>
+      <p>Envía un reporte seguro y anónimo sobre actos de corrupción, abuso o injusticia...</p>
+      <div class="seguro">
+        Totalmente libre y secreto<br>
+        <strong>Ninguno de los involucrados tendrá conocimiento del origen del reporte</strong>
+      </div>
+    </section>
+
+    <section class="formulario">
+      <h3>Detalles de la denuncia</h3>
+      <form id="denunciaForm">
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" name="titulo" required placeholder="Ej: Solicitud de mordida">
+
+        <label for="seccion">Sección de denuncia</label>
+        <select id="seccion" name="seccion" required>
+          <option value="">-- Seleccionar --</option>
+          <option value="Ambiente laboral">Ambiente laboral</option>
+          <option value="Escuelas o universidades">Escuelas o universidades</option>
+          <option value="Espacios públicos o vecinales">Espacios públicos o vecinales</option>
+          <option value="Instituciones públicas">Instituciones públicas</option>
+          <option value="Maquiladoras o fábricas">Maquiladoras o fábricas</option>
+        </select>
+
+        <label for="detalles">Detalles</label>
+        <textarea id="detalles" name="detalles" required placeholder="Describe los hechos con detalles..."></textarea>
+
+        <label for="archivo">Adjuntar archivo (opcional, PDF/JPG/PNG, máximo 10MB)</label>
+        <input type="file" id="archivo" name="archivo" accept=".pdf,.jpg,.jpeg,.png">
+
+        <button type="submit">Enviar denuncia</button>
+      </form>
+      <div class="seguridad">
+        <div id="mensaje-estado"></div>
+        🔒 Tu identidad no será registrada. Esta plataforma protege tus datos con tecnología cifrada.
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
